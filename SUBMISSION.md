@@ -2,7 +2,7 @@
 
 **Video walkthrough:** <VIDEO_LINK>
 **Candidate:** Krunal Dave · krunal.dave88@gmail.com
-**Build file:** [`build/`](./build) · **Repo:** https://github.com/kdave47/ajaiaTest
+**Build file:** [`build/`](https://github.com/kdave47/ajaiaTest/tree/main/build) · **Repo:** https://github.com/kdave47/ajaiaTest
 **Engagement:** Ajaia – https://ajaia.ai
 **Optional public work:** <GITHUB / PORTFOLIO – or leave blank>
 
@@ -26,7 +26,7 @@ We have one engineer (Priya) and about three weeks to a date Dana has already gi
 
 ## Task 2 - Build
 
-**Files:** [`build/clean_exceptions.py`](./build/clean_exceptions.py) (script), [`build/test_clean_exceptions.py`](./build/test_clean_exceptions.py) (25 tests), [`build/test_data/`](./build/test_data) (positive, negative and edge-case files). Python 3, no extra libraries.
+**Files:** [`build/clean_exceptions.py`](https://github.com/kdave47/ajaiaTest/blob/main/build/clean_exceptions.py) (script), [`build/test_clean_exceptions.py`](https://github.com/kdave47/ajaiaTest/blob/main/build/test_clean_exceptions.py) (25 tests), [`build/test_data/`](https://github.com/kdave47/ajaiaTest/tree/main/build/test_data) (positive, negative and edge-case files). Python 3, no extra libraries.
 
 **Run it:**
 ```
@@ -77,8 +77,12 @@ Technical Project Manager, Ajaia
 
 ---
 
-## Task 4 – How I used AI
+## Task 4 - AI Workflow Note
 
-- **Where I used it:**
-- **What I kept human:**
-- **One thing I checked or rejected:**
+I used AI (Claude) on every task. It read and summarised the materials, drafted the triage and the client email, and wrote the cleaning script, the tests and the test data.
+
+I kept the judgment calls human: the final ranking, what Dana gets told and in what tone, what "correct" means for the script (I counted the five rows by hand before any code was written), and every commit, push and the final submission.
+
+**One thing AI got wrong:** its first ranking put Priya's duplicate-send bug at #1. I re-ranked by impact on the product. Terminal 3 missing scores means the core feature doesn't work for a third of the business, and we can't fix it without the client, so every day of waiting costs us. That moved to #1.
+
+I also rejected the first two email drafts, one too long and one too casual, and cut it down to a short, professional table Dana can read in a minute.
