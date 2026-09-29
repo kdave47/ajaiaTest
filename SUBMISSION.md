@@ -24,20 +24,56 @@ We have one engineer (Priya) and about three weeks to a date Dana has already gi
 
 ---
 
-## Task 2 – Build
+## Task 2 - Build
 
-- **What it is:**
-- **File:** `build/...`
-- **How to run:**
-- **What it does / doesn't do:**
+**Files:** [`build/clean_exceptions.py`](./build/clean_exceptions.py) (script), [`build/test_clean_exceptions.py`](./build/test_clean_exceptions.py) (25 tests), [`build/test_data/`](./build/test_data) (positive, negative and edge-case files). Python 3, no extra libraries.
+
+**Run it:**
+```
+cd build
+python3 clean_exceptions.py exceptions_raw.csv
+python3 -m unittest -v test_clean_exceptions.py
+```
+
+**Result on the client's file:**
+
+| Event type | Count |
+|---|---|
+| doc_mismatch | 2 |
+| missed_pickup | 2 |
+| carrier_substitution | 1 |
+
+5 rows in, 3 clean, 2 flagged:
+- **CPX-88215:** the only timestamp in UTC ("Z"). The other rows have no timezone, so I can't line them up without knowing Terminal 3's local zone.
+- **CPX-88216:** carrier code is blank, so there's no way to tell which carrier it was.
+
+**What it does and how I checked it:** The script reads the export, makes terminals, carrier codes and timestamps consistent (`T3` becomes `Terminal 3`, `swft` becomes `SWFT`, every date becomes `YYYY-MM-DD HH:MM:SS`), counts exceptions by type, and writes a cleaned CSV plus a summary. The rule I built it around is "flag, don't guess": if a fix needs an assumption, the row is kept, marked FLAGGED, and the reason is written next to it. To check it actually worked and didn't just run, I counted the five rows by hand before writing any code (2 missed pickups, 2 doc mismatches, 1 carrier substitution, and the same two rows I'd expect to be unsure about), and the tests assert the script lands on exactly that. The script also checks that every input row is counted once, so nothing gets dropped quietly. Then I wrote test files in the same shape as the client's export: 7 messy-but-fixable rows that must all come out clean, 12 broken rows that must all be flagged with a specific reason, and 11 edge cases where a naive script would get it quietly wrong (`03/04` could be March or April, a leap day, a duplicate ID, a `+05:30` offset). Testing caught one thing: a blank terminal produced a confusing message, so I fixed it. The two flags on the real file point at the same Terminal 3 feed problem as DET-121, which is one more reason to get Corrigan Peak's IT contact this week.
 
 ---
 
-## Task 3 – Correcting the status update (to client)
+## Task 3 - Client status update
 
-**Subject:**
+**To:** Dana Okafor, VP Operations, Corrigan Peak Logistics
+**Subject:** Dispatch Exception Triage: status update and correction to last week's report
 
-> Draft here
+Hi Dana,
+
+I need to correct last Friday's update. We reported Green with no blockers, which did not reflect the full picture. **Current status is Amber.** The September 8 go-live remains achievable, subject to one input from your team.
+
+| Item | Current status | Next step |
+|---|---|---|
+| **Terminal 3 data** | Some Terminal 3 exceptions are not receiving urgency scores because the feed sends different fields than expected. This was raised internally on 8/6 and was not actioned promptly; that is our miss. | We need your IT contact to confirm the fields. Estimated 2 days to resolve after that. |
+| **Duplicate alerts** | Code review identified a case where the same exception could be routed to a dispatcher twice. It has not been released. | Fix in progress; it will be resolved before release. |
+| **Terminal-lead review** | Contrary to last week's note, outreach to the terminal leads had not started. | Invitations to all three leads go out today. |
+| **Auto-reassign request (from your COO)** | A valuable addition, but it moves the tool from flagging decisions to making them, which requires carrier rules and testing we cannot complete safely before September 8. | Launch as planned and scope it as Phase 2. I'm happy to join a call with you and your COO next week. |
+
+**Action needed:** Please share your Terminal 3 IT contact **by Thursday**. If we have not heard back by then, I will follow up directly with the impact on the go-live date.
+
+The next update will follow on Friday.
+
+Best regards,
+Krunal Dave
+Technical Project Manager, Ajaia
 
 ---
 
