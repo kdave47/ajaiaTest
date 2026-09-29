@@ -1,0 +1,12 @@
+exception_id,terminal,event_type,carrier_code,event_ts
+E-001,T3,missed_pickup,SWFT,03/04/2026 10:00
+E-002,T3,missed_pickup,SWFT,04/04/2026 10:00
+E-003,T3,doc_mismatch,SWFT,2026-08-14T10:03:00Z
+E-004,T3,doc_mismatch,SWFT,2026-08-14 09:00
+E-004,T3,doc_mismatch,SWFT,2026-08-14 09:00
+E-005,T3,carrier_substitution,SWFT,02/29/2028 10:00
+E-006,T3,carrier_substitution,SWFT,12/31/2026 23:59
+E-007,T3,missed_pickup,SW FT,2026-08-14 09:12:00
+E-008,Terminal 3,missed_pickup,SWFT,2026-08-14 09:12:00
+E-009, T3 ,missed_pickup, swft ,  2026-08-14 09:12:00  
+E-010,T3,doc_mismatch,SWFT,2026-08-14T10:03:00+05:30

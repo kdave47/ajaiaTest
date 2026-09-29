@@ -1,0 +1,13 @@
+exception_id,terminal,event_type,carrier_code,event_ts
+N-001,Terminal 9,missed_pickup,SWFT,2026-08-14 09:12:00
+N-002,Dock B,doc_mismatch,SWFT,2026-08-14 09:12:00
+N-003,,missed_pickup,SWFT,2026-08-14 09:12:00
+N-004,T3,missed_pickup,,2026-08-14 09:12:00
+N-005,T3,doc_mismatch,SW1FT,2026-08-14 09:12:00
+N-006,T3,doc_mismatch,SWIFTLY,2026-08-14 09:12:00
+N-007,T3,missed_pickup,SWFT,yesterday
+N-008,T3,missed_pickup,SWFT,
+N-009,T3,missed_pickup,SWFT,02/30/2026 10:00
+N-010,T3,late_delivery,SWFT,2026-08-14 09:12:00
+N-011,T3,,SWFT,2026-08-14 09:12:00
+,T3,doc_mismatch,SWFT,2026-08-14 09:12:00

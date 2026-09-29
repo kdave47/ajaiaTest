@@ -1,0 +1,8 @@
+exception_id,terminal,event_type,carrier_code,event_ts
+P-001,Terminal 1,missed_pickup,SWFT,2026-08-14 09:12:00
+P-002,T2,doc_mismatch,rlcx,2026-08-14 09:45
+P-003,terminal 3,carrier_substitution,Odfl,08/14/2026 13:05
+P-004,TERM-1,missed_pickup, UPSN ,2026-08-15T07:30:00
+P-005,t3,doc_mismatch,ABF,08/20/2026 17:45:30
+P-006,Terminal 03,carrier_substitution,FX,2026-08-16 22:00
+P-007,T 2, Missed_Pickup ,SWFT,2026-08-17 00:00:00
