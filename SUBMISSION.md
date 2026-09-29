@@ -1,10 +1,9 @@
-# Ajaia – Technical Project Manager Assessment
+# Ajaia - Technical Project Manager Assessment
+**Krunal Dave** | krunal.dave88@gmail.com
 
-**Video walkthrough:** <VIDEO_LINK>
-**Candidate:** Krunal Dave · krunal.dave88@gmail.com
-**Build file:** [`build/`](https://github.com/kdave47/ajaiaTest/tree/main/build) · **Repo:** https://github.com/kdave47/ajaiaTest
-**Engagement:** Ajaia – https://ajaia.ai
-**Optional public work:** <GITHUB / PORTFOLIO – or leave blank>
+**Video:** [PASTE LOOM LINK HERE]
+**Build (code + tests):** https://github.com/kdave47/ajaiaTest/tree/main/build
+**Prepared for:** Ajaia (https://ajaia.ai), Corrigan Peak Logistics engagement
 
 ---
 
@@ -26,14 +25,7 @@ We have one engineer (Priya) and about three weeks to a date Dana has already gi
 
 ## Task 2 - Build
 
-**Files:** [`build/clean_exceptions.py`](https://github.com/kdave47/ajaiaTest/blob/main/build/clean_exceptions.py) (script), [`build/test_clean_exceptions.py`](https://github.com/kdave47/ajaiaTest/blob/main/build/test_clean_exceptions.py) (25 tests), [`build/test_data/`](https://github.com/kdave47/ajaiaTest/tree/main/build/test_data) (positive, negative and edge-case files). Python 3, no extra libraries.
-
-**Run it:**
-```
-cd build
-python3 clean_exceptions.py exceptions_raw.csv
-python3 -m unittest -v test_clean_exceptions.py
-```
+**Build file:** https://github.com/kdave47/ajaiaTest/blob/main/build/clean_exceptions.py (Python 3, no extra libraries). Run: `python3 clean_exceptions.py exceptions_raw.csv`. Tests: `python3 -m unittest test_clean_exceptions.py` (25 pass).
 
 **Result on the client's file:**
 
@@ -43,7 +35,7 @@ python3 -m unittest -v test_clean_exceptions.py
 | missed_pickup | 2 |
 | carrier_substitution | 1 |
 
-5 rows in, 3 clean, 2 flagged:
+**5 rows in: 3 clean, 2 flagged**
 - **CPX-88215:** the only timestamp in UTC ("Z"). The other rows have no timezone, so I can't line them up without knowing Terminal 3's local zone.
 - **CPX-88216:** carrier code is blank, so there's no way to tell which carrier it was.
 
